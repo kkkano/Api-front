@@ -77,7 +77,7 @@ declare namespace API {
 
   type getInterfaceInfoByIdUsingGETParams = {
     /** id */
-    id?: number;
+    id?: string;
   };
 
   type getPostByIdUsingGETParams = {
@@ -97,11 +97,12 @@ declare namespace API {
   type InterfaceInfo = {
     createTime?: string;
     description?: string;
-    id?: number;
+    id?: string;
     isDelete?: number;
     method?: string;
     name?: string;
     requestHeader?: string;
+    requestParams?: string;
     responseHeader?: string;
     status?: number;
     updateTime?: string;
@@ -114,6 +115,7 @@ declare namespace API {
     method?: string;
     name?: string;
     requestHeader?: string;
+    requestParams?: string;
     responseHeader?: string;
     url?: string;
   };
@@ -124,6 +126,7 @@ declare namespace API {
     method?: string;
     name?: string;
     requestHeader?: string;
+    requestParams?: string;
     responseHeader?: string;
     status?: number;
     url?: string;
@@ -396,10 +399,12 @@ declare namespace API {
   };
 
   type User = {
+    accessKey?: string;
     createTime?: string;
     gender?: number;
     id?: string;
     isDelete?: number;
+    secretKey?: string;
     updateTime?: string;
     userAccount?: string;
     userAvatar?: string;
