@@ -13,8 +13,8 @@ const Index: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<API.InterfaceInfo>();
   // 使用 useParams 钩子函数获取动态路由参数
-  const params = useParams();
-
+  // const params = useParams();
+  const params = useParams<{ id?: number }>();
 
   const loadData = async () => {
     // 检查动态路由参数是否存在
@@ -27,7 +27,6 @@ const Index: React.FC = () => {
       // 发起请求获取接口信息，接受一个包含 id 参数的对象作为参数
       const res = await getInterfaceInfoByIdUsingGet({
         id: Number(params.id),
-        
       });
       // 将获取到的接口信息设置到 data 状态中
       setData(res.data);
